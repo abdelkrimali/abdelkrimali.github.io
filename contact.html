@@ -1,46 +1,5 @@
 
-<!--<?php
 
-    // Check if User Coming From A Request
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        
-        // Assign Variables
-        $user = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $mail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        $cell = filter_var($_POST['cellphone'], FILTER_SANITIZE_NUMBER_INT);
-        $msg  = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-        
-        // Creating Array of Errors
-        $formErrors = array();
-        if (strlen($user) <= 3) {
-            $formErrors[] = 'Le nom d utilisateur doit contenir au moin  <strong>3</strong> caractaires';
-        }
-        if (strlen($msg) < 10) {
-            $formErrors[] = 'le message doit contenir au moin <strong>10</strong> caractaires'; 
-        }
-        
-        // If No Errors Send The Email [ mail(To, Subject, Message, Headers, Parameters) ]
-        
-        $headers = 'From: ' . $mail . '\r\n';
-        $myEmail = 'marimedlab@gmail.com';
-        $subject = 'Contact Form';
-        
-        if (empty($formErrors)) {
-            
-            mail($myEmail, $subject, $msg, $headers);
-            
-            $user = '';
-            $mail = '';
-            $cell = '';
-            $msg = '';
-            
-            $success = '<div class="alert alert-success">Nous avons reçu votre message</div>';
-            
-        }
-        
-    }
-?>
-  -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,13 +15,13 @@
   </head>
   <body>
 
-    <!-- Start Upper Bar -->
+     <!-- Start Upper Bar -->
     <div class="upper-bar">
       <div class="container">
         <div class="row">
           <div class="info col-sm text-center text-sm-left">
             <i class="fa fa-phone"></i> <span>(+213)776910016</span>,
-            <i class="far fa-envelope"></i> abdelkrimali@gmail.Com
+            <i class="fa fa-envelope"></i> ali.abdelkrim@univ-skikda.dz
           </div>
           <div class="info col-sm text-center text-sm-right">
             <span>Let's Work Together!</span>
@@ -71,10 +30,11 @@
       </div>
     </div>
     <!-- End Upper Bar -->
+    
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand wobble-horizontal" href="#">
           <span>ABDELKRIM</span><span>Ali</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,102 +42,98 @@
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">research <span class="caret"></span></a>
+              <a href="research-topic.html" class="dropdown-toggle nav-link" data-toggle="dropdown">Research <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" style="width: 250px;">
-                <li  class="nav-item"><a class="nav-link" href="research-topic.html">Research Topic</a></li>
-                  <li  class="nav-item"><a class="nav-link" href="#">Research Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-topic.html">Research Topic</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-publications.html">Research Publications</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
+              <a class="nav-link" href="index.html#education">Education</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            
-
           </ul>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
-
     <!-- Start Contact Form -->
 
       <div class="container">
         <div class="row">
           <div class="box col-sm-6" id="online">
                <h1 class="text-center">Contact me</h1>
-            <form class="contact-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" >
-                <?php if (! empty($formErrors)) { ?>
-                <div class="alert alert-danger alert-dismissible" role="start">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <?php
-                        foreach($formErrors as $error) {
-                            echo $error . '<br/>';
-                        }
-                    ?>
-                </div>
-                <?php } ?>
-                <?php if (isset($success)) { echo $success; } ?>
-                <div class="form-group">
-                    <input 
-                           class="username form-control" 
-                           type="text" 
-                           name="username" 
-                           placeholder="Tapez votre nom "
-                           value="<?php if (isset($user)) { echo $user; } ?>" />
-                    <i class="fa fa-user fa-fw"></i>
-                    <span class="asterisx">*</span>
-                    <div class="alert alert-danger custom-alert">
-                       Le nom d'utilisateur doit contenir au moin <strong>3</strong> caractères
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input 
-                           class="email form-control" 
-                           type="email" 
-                           name="email" 
-                           placeholder="Veuillez saisir un e-mail valide" 
-                           value="<?php if (isset($mail)) { echo $mail; } ?>" />
-                    <i class="fa fa-envelope fa-fw"></i>
-                    <span class="asterisx">*</span>
-                    <div class="alert alert-danger custom-alert">
-                       e-mail ne peut pas être vide <strong>Vide</strong>
-                    </div>
-                </div>
-                <input 
-                       class="form-control" 
-                       type="text" 
-                       name="cellphone" 
-                       placeholder="Tapez votre téléphone" 
-                       value="<?php if (isset($cell)) { echo $cell; } ?>" />
-                <i class="fa fa-phone fa-fw"></i>
-                <div class="form-group">
-                    <textarea 
-                          class="message form-control" 
-                          name="message"
-                          placeholder="Message!"><?php if (isset($msg)) { echo $msg; } ?></textarea>
-                    <span class="asterisx">*</span>
-                    <div class="alert alert-danger custom-alert">
-                        le message ne peut pas comporter moins de dix  <strong>10</strong> caractères
-                    </div>
-                </div>
-                <input 
-                       class="btn btn-success" 
-                       type="submit" 
-                       value="Send" />
-                <i class="fa fa-send fa-fw send-icon"></i>
-            </form>
+            <form class="contact-form">
+    <div class="alert alert-danger alert-dismissible" role="start">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="form-group">
+        <input 
+            class="username form-control" 
+            type="text" 
+            name="username" 
+            placeholder="Tapez votre nom" 
+            value="" />
+        <i class="fa fa-user fa-fw"></i>
+        <span class="asterisx">*</span>
+        <div class="alert alert-danger custom-alert">
+            Le nom d'utilisateur doit contenir au moins <strong>3</strong> caractères
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input 
+            class="email form-control" 
+            type="email" 
+            name="email" 
+            placeholder="Veuillez saisir un e-mail valide" 
+            value="" />
+        <i class="fa fa-envelope fa-fw"></i>
+        <span class="asterisx">*</span>
+        <div class="alert alert-danger custom-alert">
+            L'e-mail ne peut pas être vide <strong>Vide</strong>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="text" 
+            name="cellphone" 
+            placeholder="Tapez votre téléphone" 
+            value="" />
+        <i class="fa fa-phone fa-fw"></i>
+    </div>
+
+    <div class="form-group">
+        <textarea 
+            class="message form-control" 
+            name="message" 
+            placeholder="Message!"></textarea>
+        <span class="asterisx">*</span>
+        <div class="alert alert-danger custom-alert">
+            Le message ne peut pas comporter moins de <strong>10</strong> caractères
+        </div>
+    </div>
+
+    <input 
+        class="btn btn-success" 
+        type="submit" 
+        value="Send" />
+    <i class="fa fa-send fa-fw send-icon"></i>
+</form>
                
 
 
@@ -218,33 +174,24 @@
     <!-- End Contact Form -->
 
  <!-- Start Copyright -->
- <div class="copyright">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 text-center text-sm-left text-uppercase">
-        Copyright 2022 ABDELKRIM-Ali &copy;
-      </div>
-      <div class="col-sm-6 text-center text-sm-right">
-        <ul class="list-unstyled">
-          <li>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-          </li>
-          
-        </ul>
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-center text-sm-left text-uppercase">
+            Copyright 2024 ABDELKRIM-Ali &copy;
+          </div>
+          <div class="col-sm-6 text-center text-sm-right">
+            <ul class="list-unstyled">
+              <li><a href="https://scholar.google.com/citations?user=Icr29l0AAAAJ&hl=fr"><i class="fas fa-graduation-cap"></i></a></li>
+              <li><a href="https://www.researchgate.net/profile/Ali-Abdelkrim"><i class="fab fa-researchgate"></i></a></li>
+              <li><a href="https://github.com/abdelkrimali"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/ali-abdelkrim-84538213a/"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- End Copyright -->
+    <!-- End Copyright -->
   
      
 

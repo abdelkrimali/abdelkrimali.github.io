@@ -3,20 +3,87 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Research Topic</title>
+    <title>Research Topic - ABDELKRIM ALI</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.css">
-  
+    <link rel="stylesheet" href="css/hover.css">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+      .research-section {
+        padding: 30px 0;
+      }
+      
+      .section-title {
+        color: #08526d;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .section-title span {
+        color: #ec1c23;
+      }
+
+      .topic-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+
+      .topic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      }
+
+      .topic-card h3 {
+        color: #08526d;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ec1c23;
+      }
+
+      .icon-box {
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 30px;
+        background: #f8f9fa;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .icon-box:hover {
+        background: #08526d;
+        color: white;
+      }
+
+      .icon-box i {
+        font-size: 40px;
+        color: #ec1c23;
+        margin-bottom: 15px;
+      }
+
+      .icon-box:hover i {
+        color: white;
+      }
+
+      .objective-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-left: 3px solid #08526d;
+        background: #f8f9fa;
+      }
+    </style>
   </head>
   <body>
-    <!-- Start Upper Bar -->
+     <!-- Start Upper Bar -->
     <div class="upper-bar">
       <div class="container">
         <div class="row">
           <div class="info col-sm text-center text-sm-left">
             <i class="fa fa-phone"></i> <span>(+213)776910016</span>,
-            <i class="fa fa-envelope"></i> abdelkrimali@gmail.Com
+            <i class="fa fa-envelope"></i> ali.abdelkrim@univ-skikda.dz
           </div>
           <div class="info col-sm text-center text-sm-right">
             <span>Let's Work Together!</span>
@@ -25,10 +92,11 @@
       </div>
     </div>
     <!-- End Upper Bar -->
+    
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand wobble-horizontal" href="#">
           <span>ABDELKRIM</span><span>Ali</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,102 +104,144 @@
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">research <span class="caret"></span></a>
+              <a href="research-topic.html" class="dropdown-toggle nav-link" data-toggle="dropdown">Research <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" style="width: 250px;">
-                <li  class="nav-item"><a class="nav-link" href="#">Research Topic</a></li>
-                  <li  class="nav-item"><a class="nav-link" href="#">Research Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-topic.html">Research Topic</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-publications.html">Research Publications</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="index.html#education">Education</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            
-
           </ul>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
 
-
-    <!-- Start Topic -->
-    <div class="topic">
-        <div class="container">
-            <h2 class="h1 text-center">Machine learning Methods in Drug Discovery</h2>
-            <div class="row">
-               <div class="col-sm-12">
-                    <div class="box">
-                        <h3 class="title">Introduction</h3>
-                        <p class="text">Drug discovery is a highly complicated process. On average, it takes 6 to 12 years to manufacture a drug and have the product released in the market. Even after a huge investment of money, time and hard work, one can not assure the success of the drug after its release. Drug discovery and design is the process of searching and identifying  drugs. The discovery of new drugs is an extremely long and tedious process, it is based on different approaches and strategies.  The drug discovery process generally starts by selecting a certain disease and define the list of its unmet medical need, then it moves towards selecting and validating a target molecule considered as druggable by developing both in-vivo and in-vitro assays.
-                            Thousands of molecules must be processed and selected, to reach a very limited number of candidates. The number of ligands which have to be tested has increased considerably, we are now talking about 10^13 ligands and still counting, scientists in the pharmaceutical field have no choice to do the work but using computational techniques like Virtual Screening (Vs). The main goal of this process is to predict  whether a set of ligands bind to a given protein receptor or not. If yes, scientists can know how strongly. After that ligands are ranked, and only the top ranked ones go to the laboratory.</p>
-                    </div>
-
-                    <div class="box">
-                        <h3 class="title">Motivation</h3>
-                        <p class="text">Artificial intelligence(AI) has recently had a profound impact on areas such as image and speech recognition and this progress has already translated into practical applications.
-                            Machine Learning is a field of computer science which focuses on creating computational algorithms that can learn complex patterns for a given set of inputs with their corresponding labels and predict and classify the new samples into any of the existing labels. The input data is referred to as training data and the new sample set is the test data. We use this data to train a model for classifying the new data into a predefined class label. The ultimate goal of the various computational methods is to classify and to predict the behavior of test data using the train data with higher accuracy. Applied to the problem of the development of new drugs, machine learning methods have been used in the area of drug discovery since 1962. Machine learning is used in protein structure prediction, protein function prediction and drug target interaction prediction.</p>
-                    </div>
-
-                    <div class="box">
-                        <h3 class="title">Objectives</h3>
-                        <p class="text"></p>
-                    </div>
-
-                    <div class="box">
-                        <h3 class="title">Keywords</h3>
-                        <p class="text"></p>
-                    </div>
-
-               </div>
-            </div>
-
+    <div class="container mt-5">
+      <!-- Research Title Section -->
+      <div class="research-section">
+        <h2 class="section-title">Research <span>Title</span></h2>
+        <div class="topic-card">
+          <h3>Application of Machine Learning Algorithms in Drug Discovery and Development</h3>
+          <p>Focusing on the intersection of Artificial Intelligence, Graph Neural Networks, and Bioinformatics for advancing drug discovery processes and improving therapeutic outcomes.</p>
         </div>
-    </div>
+      </div>
 
-    <!-- End Topic -->
-  
+      <!-- Research Focus Areas -->
+      <div class="research-section">
+        <h2 class="section-title">Research <span>Focus Areas</span></h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="icon-box">
+              <i class="fas fa-brain"></i>
+              <h4>Machine Learning</h4>
+              <p>Advanced ML algorithms for drug discovery and molecular screening</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="icon-box">
+              <i class="fas fa-project-diagram"></i>
+              <h4>Graph Neural Networks</h4>
+              <p>GNN applications in molecular structure analysis</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="icon-box">
+              <i class="fas fa-dna"></i>
+              <h4>Bioinformatics</h4>
+              <p>Computational methods for biological data analysis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Research Problematic -->
+      <div class="research-section">
+        <h2 class="section-title">Research <span>Problematic</span></h2>
+        <div class="topic-card">
+          <h3>Key Challenges</h3>
+          <ul>
+            <li>Traditional drug discovery processes are time-consuming and costly</li>
+            <li>Complex molecular interactions require sophisticated computational methods</li>
+            <li>Need for more efficient screening of potential drug candidates</li>
+            <li>Integration of multiple data sources and types in drug development</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Motivation -->
+      <div class="research-section">
+        <h2 class="section-title">Research <span>Motivation</span></h2>
+        <div class="topic-card">
+          <h3>Why This Research Matters</h3>
+          <p>The motivation for this research stems from several key factors:</p>
+          <ul>
+            <li>The potential to significantly reduce drug development time and costs</li>
+            <li>Opportunity to leverage AI advancement for better drug discovery</li>
+            <li>Need for more accurate prediction methods in molecular screening</li>
+            <li>Growing importance of computational methods in pharmaceutical research</li>
+            <li>Potential impact on healthcare and patient outcomes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Objectives -->
+      <div class="research-section">
+        <h2 class="section-title">Research <span>Objectives</span></h2>
+        <div class="objective-item">
+          <h4>Primary Objective</h4>
+          <p>Develop and implement innovative machine learning approaches to enhance the drug discovery process, particularly focusing on molecular screening and prediction.</p>
+        </div>
+        <div class="objective-item">
+          <h4>Specific Goals</h4>
+          <ul>
+            <li>Implement advanced Graph Neural Networks for molecular structure analysis</li>
+            <li>Develop improved methods for virtual screening of potential drug candidates</li>
+            <li>Create more accurate prediction models for drug-target interactions</li>
+            <li>Integrate bioinformatics approaches with machine learning techniques</li>
+            <li>Validate developed methods through case studies and experimental data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Start Copyright -->
     <div class="copyright">
       <div class="container">
         <div class="row">
           <div class="col-sm-6 text-center text-sm-left text-uppercase">
-            Copyright 2022 ABDELKRIM-Ali &copy;
+            Copyright 2024 ABDELKRIM-Ali &copy;
           </div>
           <div class="col-sm-6 text-center text-sm-right">
             <ul class="list-unstyled">
-              <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </li>
-              
+              <li><a href="https://scholar.google.com/citations?user=Icr29l0AAAAJ&hl=fr"><i class="fas fa-graduation-cap"></i></a></li>
+              <li><a href="https://www.researchgate.net/profile/Ali-Abdelkrim"><i class="fab fa-researchgate"></i></a></li>
+              <li><a href="https://github.com/abdelkrimali"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/ali-abdelkrim-84538213a/"><i class="fab fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
     <!-- End Copyright -->
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/custom.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

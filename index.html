@@ -8,6 +8,81 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/hover.css">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+      .about-section .highlights {
+        margin: 20px 0;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      }
+      
+      .about-section .highlight-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        display: flex;
+        align-items: start;
+        background: #f8f9fa;
+        border-radius: 5px;
+        border-left: 4px solid #08526d;
+      }
+      
+      .about-section .highlight-item i {
+        color: #ec1c23;
+        margin-right: 15px;
+        margin-top: 4px;
+        font-size: 1.2em;
+      }
+
+      .about-section .highlight-item strong {
+        color: #08526d;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.1em;
+      }
+
+      .expertise-area {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 15px;
+        background: #08526d;
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9em;
+        transition: all 0.3s ease;
+      }
+
+      .expertise-area:hover {
+        background: #ec1c23;
+        transform: translateY(-2px);
+      }
+
+      .about-section .read-more {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 25px;
+        background: #08526d;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .about-section .read-more:hover {
+        background: #ec1c23;
+        transform: translateY(-2px);
+      }
+
+      .slider h1 {
+        color: #fff;
+        z-index: 3;
+        font-size: 3em;
+      }
+
+      .slider h1 span {
+        color: #ec1c23;
+      }
+    </style>
   </head>
   <body>
     <!-- Start Upper Bar -->
@@ -16,7 +91,7 @@
         <div class="row">
           <div class="info col-sm text-center text-sm-left">
             <i class="fa fa-phone"></i> <span>(+213)776910016</span>,
-            <i class="fa fa-envelope"></i> abdelkrimali@gmail.Com
+            <i class="fa fa-envelope"></i> ali.abdelkrim@univ-skikda.dz
           </div>
           <div class="info col-sm text-center text-sm-right">
             <span>Let's Work Together!</span>
@@ -25,6 +100,7 @@
       </div>
     </div>
     <!-- End Upper Bar -->
+    
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
@@ -36,37 +112,36 @@
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">research <span class="caret"></span></a>
+              <a href="research-topic.html" class="dropdown-toggle nav-link" data-toggle="dropdown">Research <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" style="width: 250px;">
-                <li  class="nav-item"><a class="nav-link" href="research-topic.html">Research Topic</a></li>
-                  <li  class="nav-item"><a class="nav-link" href="#">Research Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-topic.html">Research Topic</a></li>
+                <li class="nav-item"><a class="nav-link" href="research-publications.html">Research Publications</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
+              <a class="nav-link" href="index.html#education">Education</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            
-
           </ul>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
+
     <!-- Start Slider -->
     <div class="slider">
       <div id="main-slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <h1>I'am ABDELKRIM Ali<br> <span>Phd Student </span> <br>in Computer Science .</h1>
+          <h1>ABDELKRIM Ali<br> <span>PhD Researcher</span> <br>in Artificial Intelligence & Drug Discovery</h1>
           <div class="overlay"></div>
           <div class="carousel-item carousel-one active">
           </div>
@@ -84,141 +159,166 @@
     </div>
     <!-- End Slider -->
 
-    <!-- Start Why Choose Us -->
-    <div class="choose-us">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="info col-xl-6">
-            <img src="img/ali.jpg" alt="" />
-          </div>
-          <div class="info col-xl-6">
-            <h2 class="h1">About me</h2>
-            <p> Born in Algeria 1996, ABDELKRIM Ali is a Ph.D. student at the department of 
-              computer science at the University of Skikda 20 Aout 1955
-            </p>
-            <p>4+ years experience specializing in web, desktop application development and software engineering</p>
-           
-            <p>Running a <b>Thesis</b> about the application of machine learning algorithms in the entire drug discovery process</p>
-            <p>Interrested in <b>internships</b>, <b>scholarships</b> in any related field of machine learning</p>
-            <a href="#" class="read-more grow">Resume</a>
-          </div>
-        </div>
+    <!-- Start About Section -->
+    <!-- Updated About Section -->
+<div class="choose-us" id="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="info col-xl-6">
+        <img src="img/ali.jpg" alt="ABDELKRIM Ali" />
       </div>
-    </div>
-    <!-- End Why Choose Us -->
+      <div class="info col-xl-6">
+        <h2 class="h1">About Me</h2>
+        <p>Here's the concise text version for your main page:
 
- 
-
-         <!-- Start TimeLine-->
-	<div class="time-line" id="education">
-		<div class="container">
-      <h2 class="h1 text-center"><span>Edu</span>cation</h2>
-			<div class="timeline-content">
-				<div class="year">2021</div>
-
-				<div class="left">
-					<div class="content">
-						<h3>Ph.D. student in computer science</h3>
-						<p>
-              Actually, Abdelkrim Ali is a PhD.student in computer science at the University of Skikda 20 Aout 1955. 
-            </p>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="year">2020</div>
-
-				<div class="right">
-					<div class="content">
-						<h3>Master's degree</h3>
-						<p>
-
-              In 2020, he received his <b>Master's</b> of science from Ferhat Abbas 
-              University in Setif, Algeria in the field of Software Engineering
-            </p>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="year">2018</div>
-
-				<div class="left">
-					<div class="content">
-						<h3>Bachelor's degree</h3>
-						<p>In 2018, ABDELKRIM Ali received his <b>Bachelor's </b>of science from Ferhat Abbas 
-              University in Setif, Algeria in the field of Information System
-
-
-            </p>
-					</div>
-				</div>
-
-        <div class="clearfix"></div>
-				<div class="year">2015</div>
-
-				<div class="right">
-					<div class="content">
-						<h3>Baccalaureate in experimental sciences</h3>
-						<p> Abdelkrim ALi, obtained the Baccalaureate from Abdelhamid Ibn Badis High school(Setif).
-              Got qualified to complete Bachelor studies in Computer science in University of Ferhat Abbas with a good grade
-            </p>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		
-	</div>
-
-	<!-- End TimeLine-->
-
-  <!-- Start Statistics -->
-  <div class="stats text-center">
-    <div class="container">
-      <h2 class="h1">My <span>Interest</span></h2>
-      <div class="row">
-        <div class="col-sm-6 col-lg-3">
-          <div class="stat-box">
-            <i class="fab fa-researchgate  fa-fw fa-5x"></i>
-            <span class="number"></span>
-            <p>Research</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="stat-box">
-            <i class="fas fa-dumbbell fa-fw fa-5x"></i>
-            <span class="number"></span>
-            <p>Sports</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="stat-box">
-            <i class="fa fa-book fa-fw fa-5x"></i>
-            <span class="number"></span>
-            <p>Reading</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="stat-box">
-            <i class="fas fa-laptop-code fa-fw fa-5x"></i>
-            <span class="number"></span>
-            <p>Programming</p>
-          </div>
-        </div>
+I am a passionate PhD Researcher at the University of Skikda 20 Aout 1955, working under the supervision of Prof. BOURAMOUL Abdelkrim, a distinguished professor at the NTIC Faculty, Constantine2 University. My research journey focuses on the innovative application of Artificial Intelligence in drug discovery and development, where I combine advanced machine learning techniques with bioinformatics to revolutionize pharmaceutical research. As a Lecturer Assistant at the University of Skikda and a freelance Data Scientist, I bring practical experience in both academic and industry settings. My work spans across machine learning, deep learning, and bioinformatics, with a particular focus on developing novel computational methods for drug development.</p>
       </div>
     </div>
   </div>
-  <!-- End Statistics -->
+</div>
 
-  
- 
- 
+<!-- New Research and Expertise Section -->
+<div class="research-expertise-section py-5">
+  <div class="container">
     
-    
+
+    <!-- Areas of Expertise -->
+    <div class="expertise-section mt-5">
+      <h3 class="mb-3">Areas of Expertise</h3>
+      <div class="expertise-container">
+        <span class="expertise-area">Machine Learning</span>
+        <span class="expertise-area">Deep Learning</span>
+        <span class="expertise-area">Graph Neural Networks</span>
+        <span class="expertise-area">Drug Discovery</span>
+        <span class="expertise-area">Bioinformatics</span>
+        <span class="expertise-area">Python</span>
+        <span class="expertise-area">Data Science</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.research-expertise-section {
+  background: #f8f9fa;
+}
+
+.content-box {
+  border-left-width: 4px !important;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.expertise-section {
+  padding: 30px 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.expertise-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.expertise-area {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #08526d;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.expertise-area:hover {
+  background: #ec1c23;
+  transform: translateY(-2px);
+}
+</style>
+    <!-- End About Section -->
+
+    <!-- Start TimeLine-->
+    <div class="time-line" id="education">
+      <div class="container">
+        <h2 class="h1 text-center"><span>Edu</span>cation</h2>
+        <div class="timeline-content">
+          <div class="year">2021</div>
+          <div class="left">
+            <div class="content">
+              <h3>Ph.D. Student in Computer Science</h3>
+              <p>Currently pursuing doctoral research in computer science at the University of Skikda 20 Aout 1955, focusing on AI applications in drug discovery.</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          
+          <div class="year">2020</div>
+          <div class="right">
+            <div class="content">
+              <h3>Master's Degree</h3>
+              <p>Received Master's degree in Software Engineering from Ferhat Abbas University, Setif, Algeria, with a focus on computational methods and software development.</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          
+          <div class="year">2018</div>
+          <div class="left">
+            <div class="content">
+              <h3>Bachelor's Degree</h3>
+              <p>Earned Bachelor's degree in Information Systems from Ferhat Abbas University, Setif, Algeria, establishing a strong foundation in computer science.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End TimeLine -->
+
+    <!-- Start Statistics -->
+    <div class="stats text-center">
+      <div class="container">
+        <h2 class="h1">My <span>Interest</span></h2>
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-box">
+              <i class="fab fa-researchgate fa-fw fa-5x"></i>
+              <span class="number"></span>
+              <p>Research</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-box">
+              <i class="fas fa-dumbbell fa-fw fa-5x"></i>
+              <span class="number"></span>
+              <p>Sports</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-box">
+              <i class="fa fa-book fa-fw fa-5x"></i>
+              <span class="number"></span>
+              <p>Reading</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-box">
+              <i class="fas fa-laptop-code fa-fw fa-5x"></i>
+              <span class="number"></span>
+              <p>Programming</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Statistics -->
+
     <!-- Start Contact Us -->
     <div class="contact-us">
       <div class="container">
         <div class="row">
           <div class="col-md-8 text-center text-md-left">
-            <p>You think we're cool? let's work together</p>
+            <p>You think we can collaborate? Let's work together</p>
           </div>
           <div class="col-md-4 text-center text-md-right">
             <a href="contact.html">Contact Me</a>
@@ -233,33 +333,21 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 text-center text-sm-left text-uppercase">
-            Copyright 2022 ABDELKRIM-Ali &copy;
+            Copyright 2024 ABDELKRIM-Ali &copy;
           </div>
           <div class="col-sm-6 text-center text-sm-right">
             <ul class="list-unstyled">
-              <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </li>
-              
+              <li><a href="https://scholar.google.com/citations?user=Icr29l0AAAAJ&hl=fr"><i class="fas fa-graduation-cap"></i></a></li>
+              <li><a href="https://www.researchgate.net/profile/Ali-Abdelkrim"><i class="fab fa-researchgate"></i></a></li>
+              <li><a href="https://github.com/abdelkrimali"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/ali-abdelkrim-84538213a/"><i class="fab fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
     <!-- End Copyright -->
-   
-    
-   
-     
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
